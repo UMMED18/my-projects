@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api fetch</title>
+  </head>
+  <body>
+    <h1>University fetch</h1>
+    <label>Enter country:</label>
+    <input type="text" id="countryinput" placeholder="Enter country" />
+    <button onclick="fecthupi()">click</button>
+    <div id="university"></div>
+  </body>
+  <script>
+    function fecthupi() {
+      //step1 how to get input from the users
+      const country = document.getElementById("countryinput").value;
+      //now we concrate the url with the api
+      const apiurl = `http://universities.hipolabs.com/search?country=${encodeURIComponent(  country )}`;
+
+      //fetch data from Api
+      fetch(apiurl)
+        .then((Response) => Response.json())
+        // console.log(Response);
+        .then((data) => {
+          const universities = document.getElementById("university");
+          university.innerHTML = ""; //clear previous result
+
+          if (data.length === 0) {
+            universities.textContent = "no data found";
+          } else {
+            const ul = document.createElement("ul");
+          
+          data.forEach((university) => {
+            const li = document.createElement("li");
+            li.textContent = university.name;
+            ul.appendChild(li);
+        });
+        university.appendChild(ul);
+        }
+        })
+        .catch(error => {
+          console.error("this is the best now", error);
+        });
+      // console.log(university);
+    }
+  </script>
+</html>
