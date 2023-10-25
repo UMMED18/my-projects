@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async function</title>
+</head>
+<body>
+    <h1>Hello friend today we will learn how to call async function call</h1>
+</body>
+  <script>
+    // async function sayhi(){
+    //     promise.resolve("hy")
+    //     return promise.ok
+    // }
+    // sayhi()
+    //  .then(result => console.log(result) )
+    //  .catch(error => console.log(error))
+//this is our async functions to see our value...
+    async function hello(){
+      let ram = new Promise ((resolve,reject)=>{
+        setTimeout(() => {
+           resolve("28 rohan");
+          
+        }, 2000)
+      })
+      let rohan = new Promise((reslove,reject)=>{
+        setTimeout(() => {
+         reslove("25 ram");
+          
+        }, 5000)
+
+      })
+
+    //  ram.then(alert);
+    //  rohan.then(alert)
+    console.log("fetching the value of api" );
+    console.log("fetching the value of api" )
+    let mohan = await ram
+    let sujal = await rohan
+    console.log("fetching the value of api" + sujal)
+    console.log("fetching the value of api")
+    return(mohan,sujal);
+    //there we log a many value to see our result...
+    
+  }
+  console.log("hello viewers this my unique functions for you");
+  //this is the function of define a value to show our varibale
+  //in our console functions
+      const ummed = () =>{
+        console.log("this is java we are not waiting");
+      }
+
+      const arvind = () =>{
+        console.log("hello this is technoglobe+ not good for study");
+      }
+      const main = () =>{
+          console.log("this is not good institute for doging well define course");
+      }
+      //here is the some varibale to define some value to show there many case to see
+      let c = arvind()
+    let b = ummed ()
+   let a = hello()
+   let d = main ()
+   a.then((value)=>{
+    console.log(value);
+   })
+   console.log(a);
+ //this is the async function to perform awit,reject,resolve any many type function to do in a sequence
+  </script>
+</html>
