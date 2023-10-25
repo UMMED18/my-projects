@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>async function</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <input type="button" value="sumbit" onclick="hello()">
+    <div id="api"></div>
+    
+</body>
+<script>
+    function hello(){
+        const url = document.getElementById("input").value
+        const ram = `http://universities.hipolabs.com/search?country=${encodeURIComponent(url)}`
+        
+    
+    let p1 = new Promise ((resolve , reject)=>{
+        setTimeout((p1) => {
+            console.log("its done");
+        }, 2000);
+    })
+    fetch(ram)
+    .then((data)=>{
+        console.log(data);
+    })
+    let p2 = new Promise ((resolve, reject)=>{
+        setTimeout((p2) => {
+            console.log("its my second unit");
+            
+        }, 3000);
+    })
+    p2.then((data)=>{
+
+    })
+}
+</script>
+</html>
